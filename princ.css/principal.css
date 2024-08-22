@@ -1,0 +1,48 @@
+/*Estilo da página*/
+
+body{
+    background-image: url("https://wallpapers.com/images/featured/plano-de-fundo-do-livro-xfix8ihv6dmfjzyu.jpg");
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: rgb(199, 149, 73);
+    margin: 0;
+    text-align: center;
+    font-size: large;
+    border-radius: 5px;
+
+
+}
+
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+
+}
+
+p{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(192, 198, 204);
+}
+
+div{
+    border: #c2bcbc solid 1px;
+    margin: 20px 0 0 8px;
+    border-radius: 5px;
+}
+
+h2{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3{
+    text-align: center;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
