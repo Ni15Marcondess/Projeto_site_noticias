@@ -9,7 +9,7 @@ body{
 header{
     background-color: rgb(199, 149, 73);
     margin: 0;
-    text-align: center;
+    display: flex;
     font-size: large;
     border-radius: 5px;
 
@@ -45,4 +45,33 @@ h3{
     text-align: center;
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 98vw;
+}
+
+img{
+    border-radius: 5%;
+    
+}
+
+header img {
+    width: 20vw;
+}
+
+header nav {
+    width: 88vw;
+}
+
+header nav ul {
+    width: 94%;
+    background: rgb(185, 127, 39);
+    text-align: center;
+}
+
+a{
+    color: rgb(88, 49, 20);
+    font-family: Arial, Helvetica, sans-serif;
+
 }
