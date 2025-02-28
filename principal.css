@@ -1,0 +1,311 @@
+/*Estilo da página*/
+
+/*Paleta de cores*/
+:root {
+    --roxo-principal: #22142c;
+    --roxo-escuro: #310b4d;
+    --roxo-claro: #a29dfe;
+    --cinza-claro: #ece6e6;
+    --cinza-escuro: #333;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--roxo-principal);
+    color: var(--cinza-claro);
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--roxo-escuro);
+    padding: 2vh 4vh;
+}
+.logo {
+    font-size: 4vh;
+    font-weight: bold;
+    color: var(--roxo-claro);
+}
+.nav-menu {
+    display: flex;
+    gap: 3vh;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: var(--cinza-claro);
+    transition: 0.3s;
+}
+.nav-menu a:hover {
+    color: var(--roxo-claro);
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 40vh;
+}
+.search-box input {
+    padding: 1.5vh;
+    width: 100%;
+    border: none;
+    border-radius: 1vh;
+    outline: none;
+    font-size: 1.5vh;
+}
+.search-box button {
+    margin-left: 1vh;
+    padding: 1.5vh;
+    border: none;
+    border-radius: 1vh;
+    background-color: var(--roxo-claro);
+    color: var(--cinza-claro);
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.5vh;
+}
+.search-box button:hover {
+    background-color: var(--roxo-claro);
+}
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--cinza-claro);
+    cursor: pointer;
+    font-size: 3vh;
+}
+
+/* Seção Destaques */
+.destaques {
+    padding: 5vh;
+    background-color: var(--roxo-principal);
+    border-bottom: 0.5vh solid var(--cinza-claro);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3vh;
+}
+
+.destaques h2 {
+    color: var(--cinza-claro);
+    text-align: center;
+    font-size: 4vh;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.destaque-item {
+    position: relative;
+    width: 35vh;
+    height: 35vh;
+    border-radius: 1.5vh;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.destaque-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(50%);
+    z-index: 1;
+}
+/*colocando a img*/
+.destaque-item:nth-child(1)::before {
+    background-image: url('./imagem/fundo.jpg');
+}
+
+.destaque-item h3 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cinza-claro);
+    font-size: 3vh;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    width: 90%;
+}
+
+.destaque-item p {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--cinza-claro);
+    font-size: 2vh;
+    padding: 1vh;
+    text-align: center;
+    border-radius: 1vh;
+    z-index: 2;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/*efeito*/
+.destaque-item:hover {
+    transform: scale(1.0s); /*aumenta*/
+}
+
+.destaque-item:hover p {
+    background-color: var(--roxo-claro);
+    color: var(--cinza-escuro);
+}
+
+/* Seção  Notícias */
+.noticias {
+    padding: 5vh;
+    background-color: var(--cinza-escuro);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /*para telas menores*/
+    gap: 3vh;
+}
+
+.noticias h2 {
+    color: var(--cinza-claro);
+    font-size: 4vh;
+    margin-bottom: 3vh;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.noticia-item {
+   position: relative;
+   width: 35vh;
+   height: 35vh;
+   border-radius: 1.5vh;
+   overflow: hidden;
+   cursor: pointer;
+}
+
+.noticia-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(70%); /*desfoque e escurecimnto*/
+    z-index: 1;
+}
+
+.noticia-item:nth-child(1)::before {
+    background-image: url('./imagem/fundo.jpg');
+}
+
+.noticia-item:nth-child(2)::before {
+    background-image: url('./imagem/wallpaper.jpg');
+}
+
+.noticia-item h3 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cinza-claro);
+    font-size: 3vh;
+    text-align: center;
+    font-weight: bold;
+    z-index: 2;
+    width: 90%;
+}
+
+.noticia-item p {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--cinza-claro);
+    font-size: 1.75vh;
+    padding: 1vh;
+    text-align: center;
+    border-radius: 1vh;
+    z-index: 2;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/*efeito*/
+.noticia-item:hover {
+    transform: scale(1.0s); /*aumenta*/
+}
+
+.noticia-item:hover p {
+    background-color: var(--roxo-claro);
+    color: var(--cinza-escuro);
+}
+
+/* Sidebar baixo */
+.sidebar {
+    background-color: var(--roxo-principal);
+    padding: 3vh;
+    color: var(--cinza-claro);
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.sidebar h2 {
+    font-size: 3.5vh;
+    margin-bottom: 4vh;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 3vh 0;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: var(--cinza-claro);
+    text-decoration: none;
+    font-size: 2vh;
+}
+
+.sidebar ul li a:hover {
+    color: var(--roxo-claro);
+}
+
+
+footer {
+    background-color: var(--roxo-escuro);
+    color: var(--cinza-claro);
+    text-align: center;
+    padding: 2vh;
+}
+
+footer p {
+    font-size: 2vh;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .destaque-item, .noticia-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .sidebar {
+        width: 100%;
+        margin-top: 5vh;
+        padding: 4vh 2vh; /* Ajuste no espaçamento da sidebar */
+    }
+}
+
