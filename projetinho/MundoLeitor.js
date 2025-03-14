@@ -65,3 +65,131 @@ document.querySelectorAll(".nav-menu a").forEach(link => {
         }
     });
 });
+
+// Lógica do marcador que o usuário pega e arrasta
+ const marcador = document.getElementById("marcador");
+
+ //verifica se já tem posição salva no LocalStorage
+if (localStorage.getItem("marcadorPos")) {
+    let pos = JSON.parse(localStorage.getItem("marcadorPos"));
+    marcador.style.left = pos.x + "px";
+    marcador.style.top = pos.y + "px";
+}
+
+//evento pra salvar a posição de leitura
+marcador.addEventListener("click", () => {
+    localStorage.setItem("posicaoLeitura", window.scrollY);
+    alert("Posição de leitura salva!");
+});
+
+//função pra arrastar o marcador 
+marcador.addEventListener("mousedown", (event) => {
+    let shiftX = event.clientX - marcador.getBoundingClientRect().left;
+    let shiftY = event.clientY - marcador.getBoundingClientRect().top;
+    
+    function moveAt(pageX, pageY) {
+        marcador.style.left = pageX - shiftX + "px";
+        marcador.style.top = pageY - shiftY +"px";
+    }
+
+    function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+
+    marcador.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", onMouseMove);
+
+        //salvar a posição do marcador no localStorage
+        localStorage.setItem("marcadorPos", JSON. stringify({
+            x: marcador.offsetLeft,
+            y: marcador.offsetTop
+        }));
+    }, {once: true});
+});
+
+marcador.ondragstart = () => false; //evita comportamento padrão de arrastar elemento
+
+//botão de reset do marcador 
+document.getElementById("resetMarcador").addEventListener("click", () => {
+    const marcador = document.getElementById("marcador");
+
+    // Define a posição inicial
+    marcador.style.left = "95%";
+    marcador.style.top = "50%";
+
+    // Remove a posição salva no localStorage
+    localStorage.removeItem("marcadorPos");
+});
+
+
+//código das particulas do site
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 100,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "color": {
+            "value": "#ffffff"
+        },
+        "shape": {
+            "type": "circle"
+        },
+        "opacity": {
+            "value": 0.7,
+            "random": false
+        },
+        "size": {
+            "value": 3,
+            "random": true
+        },
+        "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out"
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "push"
+            }
+        },
+        "modes": {
+            "repulse": {
+                "distance": 100,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            }
+        }
+    }
+});
+
+
+particlesJS.load('particles-js', 'js/particles-config.json', function() {
+    console.log('Particles.js carregado com sucesso!');
+});
+
+function ajustarAlturaParticles() {
+    let alturaTotal = document.body.scrollHeight;
+    document.getElementById("particles-js").style.height = alturaTotal + "px";
+}
+
+window.onload = ajustarAlturaParticles;
+window.onresize = ajustarAlturaParticles;

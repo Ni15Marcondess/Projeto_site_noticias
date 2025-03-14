@@ -10,85 +10,93 @@
 </head>
 
 <body>
-    <header class="top-bar">
-        <div class="logo">Mundo Leitor</div>
-        <nav class="nav-menu">
-            <a href="#">Início</a>
-            <a href="#">Resenhas</a>
-            <a href="#">Novidades</a>
-            <a href="#">Entrevistas</a>
-        </nav>
-
-        <div class="search-box">
-            <input type="text" placeholder="🔍 Buscar...">
-        </div>
-
-        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
-    </header>
-
-    <section class="destaques">
-        <h2>Destaques</h2>
-
-        <div class="destaque-principal"> 
-            <div class="destaque-item">
-                <img src="./imagem/fundo.jpg" alt="Destaque 1">
-                <h3>Título do Destaque 1</h3>
-                <p>Resuminho</p>
-            </div>
-        </div>
+    <div id="particles-js"></div>
+    
+        <header class="top-bar">
+            <div class="logo">Mundo Leitor</div>
+            <nav class="nav-menu">
+                <a href="#">Início</a>
+                <a href="#">Resenhas</a>
+                <a href="#">Novidades</a>
+                <a href="#">Entrevistas</a>
+            </nav>
             
-        <div class="outras-noticias">
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
+            <div class="search-box">
+                <input type="text" placeholder="🔍 Buscar...">
             </div>
             
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
-            </div>
-            
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
-            </div>
-            
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
-            </div>
-
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
-            </div>
-
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
-            </div>
-
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
-            </div>
-
-            <div class="noticia-item">
-                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
-                <h3>Nova Saga de Harry Potter é Anunciada!</h3>
-                <p>Em uma coletiva surpresa, foi revelado que J.K. Rowling lançará uma nova saga ambientada no universo de Harry Potter, explorando a história de um novo grupo de jovens bruxos em uma escola inédita de magia. A previsão de lançamento é para 2026!</p>
-            </div>
-        </div>
-        </section>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </header>
         
         
+        <div id="marcador" draggable="true">📍</div>
+        <!--o draggable "true" permite que ele seja arrastável-->
+
+        <button id="resetMarcador">🔄</button>
+
+        <section class="destaques">
+            <h2>Destaques</h2>
+            
+            <div class="destaque-principal"> 
+                <div class="destaque-item">
+                    <img src="./imagem/fundo.jpg" alt="Destaque 1">
+                    <h3>Título do Destaque 1</h3>
+                    <p>Resuminho</p>
+                </div>
+            </div>
+            
+            <div class="outras-noticias">
+                <div class="noticia-item">
+                    <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                    <h3>Outras Notícias...</h3>
+                    <p>Um pequeno resumo da notícia...</p>
+                </div>
+                
+                <div class="noticia-item">
+                    <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                    <h3>Outras Notícias...</h3>
+                    <p>Um pequeno resumo da notícia...</p>
+                </div>
+                
+                <div class="noticia-item">
+                    <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                    <h3>Outras Notícias...</h3>
+                    <p>Um pequeno resumo da notícia...</p>
+                </div>
+                
+                <div class="noticia-item">
+                    <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                    <h3>Outras Notícias...</h3>
+                    <p>Um pequeno resumo da notícia...</p>
+                </div>
+                
+            <div class="noticia-item">
+                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                <h3>Outras Notícias...</h3>
+                <p>Um pequeno resumo da notícia...</p>
+            </div>      
+            
+            <div class="noticia-item">
+                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                <h3>Outras Notícias...</h3>
+                <p>Um pequeno resumo da notícia...</p>
+            </div>
+            
+            <div class="noticia-item">
+                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                <h3>Outras Notícias...</h3>
+                <p>Um pequeno resumo da notícia...</p>
+            </div>
+            
+            <div class="noticia-item">
+                <img src="./imagem/wallpaper.jpg" alt="Notícia 2">
+                <h3>Outras Notícias...</h3>
+                <p>Um pequeno resumo da notícia...</p>
+            </div>
+        </div>
+    </section>
+    
+    
     <aside class="sidebar">
         <h2>Categorias</h2>
         <ul>
@@ -97,11 +105,13 @@
             <li><a href="#">Entrevistas</a></li>
         </ul>
     </aside>
-
+    
     <footer>
         <p>&copy; 2025 Mundo Leitor. Todos os direitos reservados.</p>
     </footer>
-   
+
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="./MundoLeitor.js"></script>
 </body>
 </html>
